@@ -1,0 +1,6 @@
+{
+  "name": "AlphaForex AI - Quantitative FX Terminal",
+  "description": "Institutional AI Forex Trading Signal Intelligence Platform featuring PRO technical quant engine, 255+ indicators, 260+ SMC strategies, AI News Candle analyzer, and Bangladesh Standard Time (BST) execution center.",
+  "requestFramePermissions": [],
+  "majorCapabilities": ["MAJOR_CAPABILITY_SERVER_SIDE_GEMINI_API"]
+}

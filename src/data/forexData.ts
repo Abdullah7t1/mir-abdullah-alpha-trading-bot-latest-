@@ -1,0 +1,572 @@
+import { CurrencyPair, IndicatorItem, StrategyItem, EconomicNewsEvent, SignalAlert, TradeAuditLog, BinaryBroker } from '../types';
+
+export const BINARY_BROKERS: BinaryBroker[] = [
+  { id: 'quotex', name: 'Quotex Trading API', logoColor: '#3b82f6', payoutPercent: 92, apiStatus: 'CONNECTED', pingMs: 12, otcSupported: true },
+  { id: 'olymptrade', name: 'Olymp Trade Bridge', logoColor: '#10b981', payoutPercent: 90, apiStatus: 'CONNECTED', pingMs: 14, otcSupported: true },
+  { id: 'pocketoption', name: 'Pocket Option Cloud', logoColor: '#8b5cf6', payoutPercent: 94, apiStatus: 'CONNECTED', pingMs: 16, otcSupported: true },
+  { id: 'bynix', name: 'Bynix / Binolla Core', logoColor: '#f97316', payoutPercent: 88, apiStatus: 'CONNECTED', pingMs: 15, otcSupported: true },
+  { id: 'deriv', name: 'Deriv Synthetic DMA', logoColor: '#ef4444', payoutPercent: 95, apiStatus: 'SYNCED', pingMs: 11, otcSupported: true },
+  { id: 'expertoption', name: 'ExpertOption FIX', logoColor: '#06b6d4', payoutPercent: 89, apiStatus: 'STANDBY', pingMs: 21, otcSupported: false },
+];
+
+export const BINARY_ASSETS = [
+  { symbol: 'EUR/USD OTC', name: 'Euro / US Dollar OTC', payout: 92, type: 'OTC' },
+  { symbol: 'GBP/USD OTC', name: 'British Pound / USD OTC', payout: 91, type: 'OTC' },
+  { symbol: 'USD/BDT OTC', name: 'US Dollar / Bangladeshi Taka OTC', payout: 94, type: 'OTC' },
+  { symbol: 'USD/JPY OTC', name: 'US Dollar / Yen OTC', payout: 88, type: 'OTC' },
+  { symbol: 'EUR/USD (Market)', name: 'Euro / USD Live Spot', payout: 85, type: 'LIVE' },
+  { symbol: 'GBP/JPY (Market)', name: 'Pound / Yen Live Spot', payout: 86, type: 'LIVE' },
+  { symbol: 'XAU/USD (Gold)', name: 'Gold Spot OTC', payout: 93, type: 'OTC' },
+  { symbol: 'BTC/USD OTC', name: 'Bitcoin / USD Synthetic', payout: 90, type: 'CRYPTO' },
+];
+
+export const INITIAL_PAIRS: CurrencyPair[] = [
+  {
+    symbol: 'EUR/USD',
+    name: 'Euro / US Dollar',
+    category: 'majors',
+    bid: 1.08452,
+    ask: 1.08464,
+    spread: 1.2,
+    change24h: 0.34,
+    changePips: 36.8,
+    high24h: 1.08710,
+    low24h: 1.08092,
+    digits: 5,
+    signalDirection: 'BUY',
+    confluence: 87.4,
+    rsi: 58.2,
+    smcSetup: 'Bullish FVG Mitigation'
+  },
+  {
+    symbol: 'GBP/USD',
+    name: 'British Pound / US Dollar',
+    category: 'majors',
+    bid: 1.26380,
+    ask: 1.26394,
+    spread: 1.4,
+    change24h: -0.18,
+    changePips: -22.5,
+    high24h: 1.26820,
+    low24h: 1.26190,
+    digits: 5,
+    signalDirection: 'BUY',
+    confluence: 79.1,
+    rsi: 52.4,
+    smcSetup: 'Asian Liquidity Sweep'
+  },
+  {
+    symbol: 'USD/JPY',
+    name: 'US Dollar / Japanese Yen',
+    category: 'majors',
+    bid: 154.215,
+    ask: 154.228,
+    spread: 1.3,
+    change24h: -0.42,
+    changePips: -65.0,
+    high24h: 155.120,
+    low24h: 153.980,
+    digits: 3,
+    signalDirection: 'SELL',
+    confluence: 84.6,
+    rsi: 41.8,
+    smcSetup: 'Bearish Order Block Reject'
+  },
+  {
+    symbol: 'XAU/USD',
+    name: 'Gold / US Dollar (Spot)',
+    category: 'metals',
+    bid: 2348.65,
+    ask: 2348.95,
+    spread: 3.0,
+    change24h: 1.15,
+    changePips: 268.0,
+    high24h: 2362.40,
+    low24h: 2328.10,
+    digits: 2,
+    signalDirection: 'BUY',
+    confluence: 91.2,
+    rsi: 64.8,
+    smcSetup: 'London High Liquidity Raid'
+  },
+  {
+    symbol: 'AUD/USD',
+    name: 'Australian Dollar / US Dollar',
+    category: 'majors',
+    bid: 0.65824,
+    ask: 0.65838,
+    spread: 1.4,
+    change24h: 0.22,
+    changePips: 14.5,
+    high24h: 0.66120,
+    low24h: 0.65650,
+    digits: 5,
+    signalDirection: 'NEUTRAL',
+    confluence: 52.0,
+    rsi: 49.3,
+    smcSetup: 'Consolidation Range'
+  },
+  {
+    symbol: 'USD/CAD',
+    name: 'US Dollar / Canadian Dollar',
+    category: 'majors',
+    bid: 1.36940,
+    ask: 1.36955,
+    spread: 1.5,
+    change24h: -0.12,
+    changePips: -16.0,
+    high24h: 1.37310,
+    low24h: 1.36780,
+    digits: 5,
+    signalDirection: 'SELL',
+    confluence: 76.5,
+    rsi: 44.1,
+    smcSetup: 'CHoCH Bearish Flip'
+  },
+  {
+    symbol: 'USD/CHF',
+    name: 'US Dollar / Swiss Franc',
+    category: 'majors',
+    bid: 0.90812,
+    ask: 0.90828,
+    spread: 1.6,
+    change24h: -0.28,
+    changePips: -25.2,
+    high24h: 0.91240,
+    low24h: 0.90680,
+    digits: 5,
+    signalDirection: 'SELL',
+    confluence: 74.0,
+    rsi: 42.6,
+    smcSetup: 'Liquidity Pool Grab'
+  },
+  {
+    symbol: 'GBP/JPY',
+    name: 'British Pound / Japanese Yen',
+    category: 'minors',
+    bid: 194.882,
+    ask: 194.904,
+    spread: 2.2,
+    change24h: -0.58,
+    changePips: -114.0,
+    high24h: 196.400,
+    low24h: 194.350,
+    digits: 3,
+    signalDirection: 'SELL',
+    confluence: 88.0,
+    rsi: 38.5,
+    smcSetup: 'Judas Swing Fade'
+  },
+  {
+    symbol: 'EUR/JPY',
+    name: 'Euro / Japanese Yen',
+    category: 'minors',
+    bid: 167.240,
+    ask: 167.260,
+    spread: 2.0,
+    change24h: -0.14,
+    changePips: -24.0,
+    high24h: 168.100,
+    low24h: 166.900,
+    digits: 3,
+    signalDirection: 'NEUTRAL',
+    confluence: 58.0,
+    rsi: 48.9,
+    smcSetup: 'Camarilla L3 Range Test'
+  },
+  {
+    symbol: 'BTC/USD',
+    name: 'Bitcoin / US Dollar',
+    category: 'crypto',
+    bid: 89450.0,
+    ask: 89475.0,
+    spread: 25.0,
+    change24h: 2.45,
+    changePips: 2140.0,
+    high24h: 90200.0,
+    low24h: 87100.0,
+    digits: 1,
+    signalDirection: 'BUY',
+    confluence: 83.2,
+    rsi: 61.5,
+    smcSetup: 'Daily VWAP Rebound'
+  }
+];
+
+export const INDICATOR_CATEGORIES = [
+  { id: 'all', label: 'All Indicators (255+)' },
+  { id: 'trend', label: 'Trend Following (60+)' },
+  { id: 'momentum', label: 'Momentum & Oscillators (55+)' },
+  { id: 'volatility', label: 'Volatility & Bands (45+)' },
+  { id: 'volume', label: 'Volume & Order Flow (50+)' },
+  { id: 'sr', label: 'Support, Resistance & Pivots (45+)' }
+] as const;
+
+export const SAMPLE_INDICATORS: IndicatorItem[] = [
+  {
+    id: 'ind-1',
+    name: 'Supertrend (10, 3.0)',
+    category: 'trend',
+    value: '1.08240 (Bullish Support)',
+    signal: 'BULLISH',
+    active: true,
+    weight: 12,
+    description: 'ATR Volatility-adjusted directional envelope'
+  },
+  {
+    id: 'ind-2',
+    name: 'Ichimoku Kinko Hyo (9, 26, 52)',
+    category: 'trend',
+    value: 'Above Kumo Cloud (Tenkan > Kijun)',
+    signal: 'BULLISH',
+    active: true,
+    weight: 14,
+    description: 'Equilibrium chart cloud structure and lagging span confirmation'
+  },
+  {
+    id: 'ind-3',
+    name: 'EMA Ribbon (9, 21, 50, 200)',
+    category: 'trend',
+    value: 'Perfect Bullish Stack (9 > 21 > 50 > 200)',
+    signal: 'BULLISH',
+    active: true,
+    weight: 15,
+    description: 'Exponential moving average directional multi-layer alignment'
+  },
+  {
+    id: 'ind-4',
+    name: 'Volume Profile Point of Control (POC)',
+    category: 'volume',
+    value: '1.08380 (High Volume Node Protected)',
+    signal: 'BULLISH',
+    active: true,
+    weight: 16,
+    description: 'Horizontal institutional volume execution cluster'
+  },
+  {
+    id: 'ind-5',
+    name: 'Anchored VWAP (Daily Session)',
+    category: 'volume',
+    value: '+1.8σ Above VWAP (1.08410)',
+    signal: 'BULLISH',
+    active: true,
+    weight: 13,
+    description: 'Volume-weighted average price session baseline benchmark'
+  },
+  {
+    id: 'ind-6',
+    name: 'RSI (14) + Dynamic StochRSI',
+    category: 'momentum',
+    value: '58.4 (Neutral-Bullish, No Divergence)',
+    signal: 'BULLISH',
+    active: true,
+    weight: 10,
+    description: 'Relative strength momentum index without overbought exhaustion'
+  },
+  {
+    id: 'ind-7',
+    name: 'MACD Histogram Delta (12, 26, 9)',
+    category: 'momentum',
+    value: '+0.00042 (Expanding Bullish Momentum)',
+    signal: 'BULLISH',
+    active: true,
+    weight: 11,
+    description: 'Moving average convergence divergence momentum acceleration'
+  },
+  {
+    id: 'ind-8',
+    name: 'Bollinger Bands (20, 2.0 Squeeze)',
+    category: 'volatility',
+    value: 'Bandwidth Expansion (Squeeze Breakout)',
+    signal: 'BULLISH',
+    active: true,
+    weight: 12,
+    description: 'Statistical volatility standard deviation channel expansion'
+  },
+  {
+    id: 'ind-9',
+    name: 'Camarilla Pivots (L3/L4 & H3/H4)',
+    category: 'sr',
+    value: 'Crossed H3 (1.08420) Targeting H4 (1.08850)',
+    signal: 'BULLISH',
+    active: true,
+    weight: 14,
+    description: 'Institutional intraday mean-reversion & breakout barrier matrix'
+  },
+  {
+    id: 'ind-10',
+    name: 'Fibonacci Golden Pocket (0.618 - 0.65)',
+    category: 'sr',
+    value: 'Defended at 1.08310 with wick rejection',
+    signal: 'BULLISH',
+    active: true,
+    weight: 15,
+    description: 'Institutional discount retrace mitigation target'
+  },
+  {
+    id: 'ind-11',
+    name: 'Chaikin Money Flow (CMF 20)',
+    category: 'volume',
+    value: '+0.18 (Institutional Net Accumulation)',
+    signal: 'BULLISH',
+    active: true,
+    weight: 9,
+    description: 'Volume-weighted accumulation vs distribution flow rate'
+  },
+  {
+    id: 'ind-12',
+    name: 'Keltner Channels (20, 1.5 ATR)',
+    category: 'volatility',
+    value: 'Price riding upper band envelope',
+    signal: 'BULLISH',
+    active: false,
+    weight: 8,
+    description: 'ATR-based volatility channel tracking trend strength'
+  }
+];
+
+export const SAMPLE_STRATEGIES: StrategyItem[] = [
+  {
+    id: 'strat-1',
+    code: '#014',
+    name: 'Fair Value Gap (FVG) Mitigation & Expansion',
+    category: 'smc',
+    winRate: 81.4,
+    profitFactor: 2.84,
+    tradesCount: 142,
+    active: true,
+    description: 'Identifies institutional imbalance between candle 1 high and candle 3 low; enters on 50% equilibrium test with order flow confirmation.',
+    confluencePoints: 24
+  },
+  {
+    id: 'strat-2',
+    code: '#042',
+    name: 'London Open Judas Swing & Liquidity Sweep',
+    category: 'smc',
+    winRate: 78.9,
+    profitFactor: 2.65,
+    tradesCount: 98,
+    active: true,
+    description: 'Detects false Asian session high/low manipulation run during 02:00-03:30 PM BST, followed by rapid displacement in true trend direction.',
+    confluencePoints: 22
+  },
+  {
+    id: 'strat-3',
+    code: '#088',
+    name: 'Multi-Timeframe Structure (4H Bias -> 15M BOS -> 5M Entry)',
+    category: 'confluence',
+    winRate: 82.5,
+    profitFactor: 3.10,
+    tradesCount: 184,
+    active: true,
+    description: 'Aligns higher timeframe order flow with lower timeframe Change of Character (CHoCH) and volume delta confirmation.',
+    confluencePoints: 26
+  },
+  {
+    id: 'strat-4',
+    code: '#127',
+    name: '1M / 5M EMA Ribbon Micro-Scalp Breakout',
+    category: 'scalping',
+    winRate: 74.2,
+    profitFactor: 2.15,
+    tradesCount: 320,
+    active: true,
+    description: 'Ultra-low latency compression squeeze on 9/21/50 EMAs with tick volume surge; tight 6-pip stops and rapid 12-18 pip target scaling.',
+    confluencePoints: 18
+  },
+  {
+    id: 'strat-5',
+    code: '#205',
+    name: 'Post-News Wick Absorption & Spike Fade',
+    category: 'news',
+    winRate: 76.8,
+    profitFactor: 2.48,
+    tradesCount: 76,
+    active: false,
+    description: 'Fades exhausted news manipulation wicks after liquidity is harvested from retail stop clusters at psychological round numbers.',
+    confluencePoints: 20
+  }
+];
+
+export const SAMPLE_ECONOMIC_EVENTS: EconomicNewsEvent[] = [
+  {
+    id: 'news-1',
+    bstTime: '07:30 PM',
+    utcTime: '13:30 UTC',
+    currency: 'USD',
+    event: 'Non-Farm Payrolls (NFP) & Average Hourly Earnings',
+    impact: 'EXTREME',
+    actual: 'PENDING',
+    forecast: '185K',
+    previous: '256K',
+    surpriseDeviation: '±1.2σ Anticipated',
+    status: 'COUNTDOWN',
+    bias: 'NEUTRAL'
+  },
+  {
+    id: 'news-2',
+    bstTime: '07:30 PM',
+    utcTime: '13:30 UTC',
+    currency: 'USD',
+    event: 'Unemployment Rate',
+    impact: 'HIGH',
+    actual: 'PENDING',
+    forecast: '4.1%',
+    previous: '4.0%',
+    surpriseDeviation: '±0.1%',
+    status: 'COUNTDOWN',
+    bias: 'NEUTRAL'
+  },
+  {
+    id: 'news-3',
+    bstTime: '03:00 PM',
+    utcTime: '09:00 UTC',
+    currency: 'EUR',
+    event: 'S&P Global Eurozone Services PMI',
+    impact: 'HIGH',
+    actual: '51.8',
+    forecast: '50.4',
+    previous: '49.8',
+    surpriseDeviation: '+1.4σ Bullish Surprise',
+    status: 'RELEASED',
+    bias: 'BULLISH'
+  },
+  {
+    id: 'news-4',
+    bstTime: '08:45 PM',
+    utcTime: '14:45 UTC',
+    currency: 'EUR',
+    event: 'ECB President Christine Lagarde Speaks',
+    impact: 'HIGH',
+    actual: 'LIVE',
+    forecast: 'Dovish',
+    previous: '3.75%',
+    surpriseDeviation: 'Monitoring Policy Tone',
+    status: 'PENDING',
+    bias: 'BEARISH'
+  },
+  {
+    id: 'news-5',
+    bstTime: '01:00 AM',
+    utcTime: '19:00 UTC',
+    currency: 'USD',
+    event: 'FOMC Meeting Minutes & Fed Balance Sheet',
+    impact: 'HIGH',
+    actual: 'PENDING',
+    forecast: 'Neutral',
+    previous: '5.50%',
+    surpriseDeviation: 'Rate Path Projection',
+    status: 'PENDING',
+    bias: 'NEUTRAL'
+  }
+];
+
+export const BANGLADESH_SIGNALS: SignalAlert[] = [
+  {
+    id: 'sig-bd-01',
+    pair: 'EUR/USD',
+    type: 'BUY',
+    timeBST: '০৮:৩৫ PM BST',
+    timeUTC: '14:35 UTC',
+    entry: 1.08450,
+    stopLoss: 1.08310,
+    takeProfit1: 1.08650,
+    takeProfit2: 1.08850,
+    takeProfit3: 1.09100,
+    riskReward: '1:3.4',
+    confidence: 87.4,
+    status: 'ACTIVE',
+    strategies: ['FVG Imbalance #014', 'Camarilla H3 Breakout', 'London/NY Overlap Volume'],
+    bengaliTranscript: 'ভাই, বাংলাদেশ সময় রাত ৮:৩৫ মিনিটে EUR/USD-এ UP/BUY সেটআপ পাওয়া গেছে। এন্ট্রি ১.০৮৪৫০, স্টপ লস ১.০৮৩১০, টেক প্রফিট ১.০৮৮৫০। আর:আর ১:৩.৪, কনফ্লুয়েন্স ৮৭.৪%।',
+    englishTranscript: 'Institutional Buy signal generated on EUR/USD at 08:35 PM BST (London/NY overlap). Entry 1.08450, SL 1.08310, TP2 1.08850. R:R 1:3.4, AI Confidence 87.4%.'
+  },
+  {
+    id: 'sig-bd-02',
+    pair: 'GBP/JPY',
+    type: 'SELL',
+    timeBST: '০৪:২০ PM BST',
+    timeUTC: '10:20 UTC',
+    entry: 195.420,
+    stopLoss: 195.850,
+    takeProfit1: 194.800,
+    takeProfit2: 194.200,
+    takeProfit3: 193.500,
+    riskReward: '1:2.8',
+    confidence: 88.0,
+    status: 'IN_PROFIT',
+    pipsGained: 53.8,
+    strategies: ['Judas Swing Fade #042', 'Institutional 195.50 Barrier Reject'],
+    bengaliTranscript: 'বাংলাদেশ সময় বিকেল ৪:২০ মিনিটে GBP/JPY-এ SELL সিগন্যাল সক্রিয় হয়েছিল। বর্তমানে +৫৪ পিপস প্রফিটে ট্রেড চলছে। স্টপ লস ব্রেক-ইভেনে মুভ করুন।',
+    englishTranscript: 'GBP/JPY Institutional Short triggered at 04:20 PM BST. Trade currently running +53.8 pips in profit. Move stop loss to breakeven.'
+  },
+  {
+    id: 'sig-bd-03',
+    pair: 'XAU/USD',
+    type: 'BUY',
+    timeBST: '০৯:১৫ PM BST (প্রস্তুতি)',
+    timeUTC: '15:15 UTC',
+    entry: 2348.50,
+    stopLoss: 2338.00,
+    takeProfit1: 2362.00,
+    takeProfit2: 2378.00,
+    takeProfit3: 2395.00,
+    riskReward: '1:3.1',
+    confidence: 91.2,
+    status: 'ACTIVE',
+    strategies: ['Daily High Raid #042', 'Order Block Re-test', 'Asian Low Sweep'],
+    bengaliTranscript: 'সতর্কতা: রাত ৯:১৫ মিনিটে গোল্ডে (XAU/USD) তীব্র ভলাটিলিটি প্রত্যাশিত। ২৩৪৮ ডলার লেভেলে ডিসকাউন্টে শক্তিশালী বায়ারদের অংশগ্রহণ লক্ষ্য করা গেছে।',
+    englishTranscript: 'Alert: High volatility anticipated in Spot Gold (XAU/USD) around 09:15 PM BST. Heavy institutional limit bids spotted at $2348 level.'
+  }
+];
+
+export const RECENT_TRADE_AUDITS: TradeAuditLog[] = [
+  {
+    id: 'tr-901',
+    pair: 'EUR/USD',
+    direction: 'BUY',
+    entryPrice: 1.08120,
+    exitPrice: 1.08580,
+    pips: 46.0,
+    pnlUsd: 460.0,
+    result: 'WIN',
+    date: 'Today, 14:10 BST',
+    session: 'London Open'
+  },
+  {
+    id: 'tr-900',
+    pair: 'USD/JPY',
+    direction: 'SELL',
+    entryPrice: 154.850,
+    exitPrice: 154.210,
+    pips: 64.0,
+    pnlUsd: 640.0,
+    result: 'WIN',
+    date: 'Today, 11:20 BST',
+    session: 'Asian / London Transition'
+  },
+  {
+    id: 'tr-899',
+    pair: 'GBP/USD',
+    direction: 'BUY',
+    entryPrice: 1.26620,
+    exitPrice: 1.26440,
+    pips: -18.0,
+    pnlUsd: -180.0,
+    result: 'LOSS',
+    date: 'Yesterday, 19:30 BST',
+    session: 'NY Open',
+    postMortem: 'Sudden hawkish headline from Fed governor caused rapid USD squeeze. Strict stop loss protected capital at 18 pips (0.72% account risk).'
+  },
+  {
+    id: 'tr-898',
+    pair: 'XAU/USD',
+    direction: 'BUY',
+    entryPrice: 2332.00,
+    exitPrice: 2346.50,
+    pips: 145.0,
+    pnlUsd: 1450.0,
+    result: 'WIN',
+    date: 'Yesterday, 16:40 BST',
+    session: 'London Mid'
+  }
+];

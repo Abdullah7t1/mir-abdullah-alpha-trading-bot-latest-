@@ -1,0 +1,784 @@
+<!DOCTYPE html>
+
+<html class="dark" lang="en"><head><meta charset="utf-8"/><meta content="width=device-width, initial-scale=1.0" name="viewport"/><meta content="web_dashboard" name="shell-type"/><link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Geist:wght@100..900&family=JetBrains+Mono:wght@100..900&display=swap" rel="stylesheet"/><style>@layer base{html,body{margin:0;padding:0;}body{overscroll-behavior:none;}main>:first-child{margin-top:0!important;}main>:last-child{margin-bottom:0!important;}}::-webkit-scrollbar{display:none;}</style><script src="https://cdn.tailwindcss.com"></script><script id="tailwind-config">tailwind.config={darkMode:"class",theme:{extend:{colors:{"primary-container":"#4d8eff","surface-dim":"#0f131c","on-secondary-fixed":"#002113","error":"#ffb4ab","inverse-on-surface":"#2c3039","inverse-primary":"#005ac2","on-tertiary-fixed":"#23005c","outline-variant":"#424754","on-secondary":"#003824","on-tertiary-container":"#340080","on-primary-fixed":"#001a42","primary":"#adc6ff","primary-fixed":"#d8e2ff","background":"#0f131c","on-background":"#dfe2ee","on-surface":"#dfe2ee","surface-tint":"#adc6ff","secondary":"#4edea3","surface-container-highest":"#31353e","surface-container":"#1c2028","surface-bright":"#353942","secondary-fixed-dim":"#4edea3","secondary-container":"#00a572","on-tertiary-fixed-variant":"#5516be","on-tertiary":"#3c0091","surface-variant":"#31353e","on-primary-container":"#00285d","on-surface-variant":"#c2c6d6","on-secondary-container":"#00311f","outline":"#8c909f","tertiary-fixed":"#e9ddff","tertiary-fixed-dim":"#d0bcff","primary-fixed-dim":"#adc6ff","tertiary-container":"#a078ff","surface":"#0f131c","surface-container-low":"#181c24","error-container":"#93000a","surface-container-high":"#262a33","surface-container-lowest":"#0a0e16","on-primary-fixed-variant":"#004395","secondary-fixed":"#6ffbbe","on-error-container":"#ffdad6","on-secondary-fixed-variant":"#005236","on-error":"#690005","inverse-surface":"#dfe2ee","tertiary":"#d0bcff","on-primary":"#002e6a"},borderRadius:{DEFAULT:"0.125rem",lg:"0.25rem",xl:"0.5rem",full:"0.75rem"},spacing:{"space-xs":"0.25rem","gutter-compact":"0.25rem","space-lg":"0.75rem","margin-mobile":"0.5rem","space-sm":"0.375rem","space-2xl":"1.5rem","space-md":"0.5rem","space-xl":"1rem",margin:"0.75rem",gutter:"0.5rem"},fontFamily:{"headline-lg":["Geist"],"body-md":["Geist"],"label-data-sm":["JetBrains Mono"],"display-lg":["Geist"],"label-data-md":["JetBrains Mono"],"label-data-lg":["JetBrains Mono"],"label-ticker-xs":["JetBrains Mono"],"headline-sm":["Geist"],"body-sm":["Geist"],"title-md":["Geist"],"display-lg-mobile":["Geist"]},fontSize:{"headline-lg":["24px",{lineHeight:"32px",letterSpacing:"-0.02em",fontWeight:"600"}],"body-md":["13px",{lineHeight:"18px",letterSpacing:"0em",fontWeight:"400"}],"label-data-sm":["11px",{lineHeight:"14px",letterSpacing:"0.02em",fontWeight:"400"}],"display-lg":["36px",{lineHeight:"44px",letterSpacing:"-0.03em",fontWeight:"700"}],"label-data-md":["13px",{lineHeight:"16px",letterSpacing:"0em",fontWeight:"500"}],"label-data-lg":["16px",{lineHeight:"20px",letterSpacing:"-0.01em",fontWeight:"600"}],"label-ticker-xs":["10px",{lineHeight:"12px",letterSpacing:"0.04em",fontWeight:"700"}],"headline-sm":["18px",{lineHeight:"24px",letterSpacing:"-0.01em",fontWeight:"600"}],"body-sm":["12px",{lineHeight:"16px",letterSpacing:"0em",fontWeight:"400"}],"title-md":["15px",{lineHeight:"20px",letterSpacing:"0em",fontWeight:"500"}],"display-lg-mobile":["26px",{lineHeight:"32px",letterSpacing:"-0.02em",fontWeight:"700"}]}}}};</script></head><body class="bg-background font-body-md text-body-md text-on-surface min-h-screen selection:bg-primary-container selection:text-on-primary-container"><aside class="fixed left-0 top-0 bottom-0 w-64 bg-surface-container-lowest z-50 flex flex-col justify-between shadow-[0_1px_8px_rgba(0,0,0,0.3)]"><div class="flex flex-col"><div class="h-14 px-space-xl flex items-center justify-between bg-surface-container-low"><div class="flex items-center gap-space-sm"><div class="w-2.5 h-2.5 bg-secondary rounded-full animate-pulse"></div><span class="font-headline-sm text-headline-sm font-bold tracking-tight text-on-surface">ALPHAFOREX</span></div><span class="font-label-ticker-xs text-label-ticker-xs px-space-xs py-0.5 rounded bg-primary-container text-on-primary-container">QUANT</span></div><div class="px-space-md py-space-sm"><span class="font-label-ticker-xs text-label-ticker-xs text-outline uppercase px-space-sm">Core Intelligence</span></div><nav class="flex flex-col gap-0.5 px-space-xs" data-active-classes="bg-surface-container-high text-primary font-bold"><a class="flex items-center gap-space-md px-space-md py-space-sm rounded text-on-surface-variant hover:bg-surface-container hover:text-on-surface transition-colors group" data-path="dashboard-terminal" href="#"><span class="material-symbols-outlined text-outline group-hover:text-primary transition-colors text-[18px]">terminal</span><span class="font-body-md text-body-md truncate">Dashboard / Terminal</span></a><a class="flex items-center gap-space-md px-space-md py-space-sm rounded text-on-surface-variant hover:bg-surface-container hover:text-on-surface transition-colors group" data-path="pro-technical-engine" href="#"><span class="material-symbols-outlined text-outline group-hover:text-primary transition-colors text-[18px]">show_chart</span><span class="font-body-md text-body-md truncate">PRO Technical Engine</span></a><a class="flex items-center gap-space-md px-space-md py-space-sm rounded text-on-surface-variant hover:bg-surface-container hover:text-on-surface transition-colors group" data-path="news-candle-ai-calendar" href="#"><span class="material-symbols-outlined text-outline group-hover:text-primary transition-colors text-[18px]">newspaper</span><span class="font-body-md text-body-md truncate">NEWS Candle AI</span></a><a class="flex items-center gap-space-md px-space-md py-space-sm rounded text-on-surface-variant hover:bg-surface-container hover:text-on-surface transition-colors group" data-path="multi-asset-scanner" href="#"><span class="material-symbols-outlined text-outline group-hover:text-primary transition-colors text-[18px]">radar</span><span class="font-body-md text-body-md truncate">Multi-Asset Scanner</span></a><a class="flex items-center gap-space-md px-space-md py-space-sm rounded text-on-surface-variant hover:bg-surface-container hover:text-on-surface transition-colors group" data-path="strategy-backtester-lab" href="#"><span class="material-symbols-outlined text-outline group-hover:text-primary transition-colors text-[18px]">biotech</span><span class="font-body-md text-body-md truncate">Backtester & Lab</span></a><a class="flex items-center gap-space-md px-space-md py-space-sm rounded text-on-surface-variant hover:bg-surface-container hover:text-on-surface transition-colors group" data-path="risk-position-calculator" href="#"><span class="material-symbols-outlined text-outline group-hover:text-primary transition-colors text-[18px]">calculate</span><span class="font-body-md text-body-md truncate">Risk & Position Calc</span></a><a class="flex items-center gap-space-md px-space-md py-space-sm rounded text-on-surface-variant hover:bg-surface-container hover:text-on-surface transition-colors group" data-path="bangladesh-signal-center" href="#"><span class="material-symbols-outlined text-outline group-hover:text-primary transition-colors text-[18px]">podcasts</span><span class="font-body-md text-body-md truncate">BD Signal Center</span></a><a class="flex items-center gap-space-md px-space-md py-space-sm rounded text-on-surface-variant hover:bg-surface-container hover:text-on-surface transition-colors group" data-path="system-telemetry" href="#"><span class="material-symbols-outlined text-outline group-hover:text-primary transition-colors text-[18px]">memory</span><span class="font-body-md text-body-md truncate">System Telemetry</span></a></nav></div><div class="p-space-md bg-surface-container-low"><div class="bg-surface-container-highest p-space-sm rounded flex flex-col gap-1"><div class="flex items-center justify-between"><span class="font-label-ticker-xs text-label-ticker-xs text-outline">ENGINE CORES</span><span class="font-label-ticker-xs text-label-ticker-xs text-secondary">64/64 ACTIVE</span></div><div class="flex items-center justify-between"><span class="font-label-ticker-xs text-label-ticker-xs text-outline">QUANT STRATEGIES</span><span class="font-label-data-sm text-label-data-sm text-on-surface">260+ LOADED</span></div><div class="w-full bg-surface-container-low h-1 rounded overflow-hidden mt-1"><div class="bg-secondary h-full w-[94%]"></div></div></div></div></aside><div class="pl-64 flex flex-col min-h-screen"><header class="fixed top-0 left-64 right-0 h-14 bg-surface-container-lowest/90 backdrop-blur-xl z-40 flex items-center justify-between px-space-xl shadow-[0_1px_8px_rgba(0,0,0,0.25)]"><div class="flex items-center gap-space-lg"><div class="flex flex-col"><span class="font-headline-sm text-headline-sm font-bold tracking-tight text-on-surface">ALPHAFOREX AI // QUANT INTELLIGENCE</span><span class="font-label-ticker-xs text-label-ticker-xs text-outline">INSTITUTIONAL HIGH-FREQUENCY DESK</span></div><div class="hidden xl:flex items-center bg-surface-container p-0.5 rounded"><button class="px-space-md py-1 rounded font-label-ticker-xs text-label-ticker-xs bg-primary-container text-on-primary-container font-bold shadow-sm">PRO MODE (Technical & Quant Engine)</button><button class="px-space-md py-1 rounded font-label-ticker-xs text-label-ticker-xs text-on-surface-variant hover:text-on-surface">NEWS MODE (Fundamental & Candle AI)</button></div></div><div class="flex items-center gap-space-xl"><div class="flex items-center gap-space-lg"><div class="flex flex-col items-end"><span class="font-label-ticker-xs text-label-ticker-xs text-outline">CLOCK BST (UTC+6)</span><span class="font-label-data-md text-label-data-md font-semibold text-secondary">15:42:08.412 BST</span></div><div class="hidden lg:flex flex-col items-end"><span class="font-label-ticker-xs text-label-ticker-xs text-outline">NETWORK & LATENCY</span><div class="flex items-center gap-1.5"><span class="w-1.5 h-1.5 rounded-full bg-secondary"></span><span class="font-label-data-sm text-label-data-sm text-on-surface">14ms | WS-CONNECTED: TIER-1 LP</span></div></div><div class="hidden 2xl:flex items-center gap-space-md bg-surface-container px-space-md py-1 rounded"><div class="flex flex-col"><span class="font-label-ticker-xs text-label-ticker-xs text-outline">24H SIGNALS</span><span class="font-label-data-sm text-label-data-sm text-on-surface font-semibold">38 EXECUTED</span></div><div class="w-px h-6 bg-surface-bright"></div><div class="flex flex-col"><span class="font-label-ticker-xs text-label-ticker-xs text-outline">WIN RATE</span><span class="font-label-data-sm text-label-data-sm text-secondary font-semibold">78.4%</span></div><div class="w-px h-6 bg-surface-bright"></div><div class="flex flex-col"><span class="font-label-ticker-xs text-label-ticker-xs text-outline">RISK GATE</span><span class="font-label-ticker-xs text-label-ticker-xs px-1 rounded bg-secondary-container text-on-secondary-container font-bold">ACTIVE</span></div></div></div><div class="flex items-center gap-space-md"><div class="w-8 h-8 rounded-full bg-primary flex items-center justify-center"><span class="material-symbols-outlined text-on-primary text-[18px]">person</span></div></div></div></header><main class="relative pt-14 pb-8 w-full px-space-xl bg-background flex-1"><div class="flex flex-col w-full gap-space-sm pb-10">
+<!-- CONTEXT TICKER STRIP -->
+<header class="w-full bg-surface-container-low rounded-lg p-space-sm shadow-md flex flex-wrap items-center justify-between gap-space-md">
+<div class="flex items-center gap-space-lg flex-wrap">
+<!-- Pair & Ticker Meta -->
+<div class="flex items-center gap-space-sm bg-surface-container-highest px-space-md py-1 rounded">
+<span class="material-symbols-outlined text-secondary text-[20px]">currency_exchange</span>
+<div>
+<div class="flex items-center gap-1.5">
+<span class="font-headline-sm text-headline-sm font-bold text-on-surface tracking-wide">EUR/USD</span>
+<span class="font-label-ticker-xs text-label-ticker-xs px-1.5 py-0.5 rounded bg-surface-container font-semibold text-primary">SPOT FX</span>
+</div>
+<span class="font-label-data-sm text-label-data-sm text-on-surface-variant">Euro / US Dollar</span>
+</div>
+</div>
+<!-- Live Spread, Bid, Ask -->
+<div class="flex items-center gap-space-md">
+<div class="flex flex-col">
+<span class="font-label-ticker-xs text-label-ticker-xs text-outline">BID (SELL)</span>
+<span class="font-label-data-lg text-label-data-lg text-error font-bold tracking-tight" id="live-bid">1.08452</span>
+</div>
+<div class="flex flex-col items-center justify-center px-space-xs">
+<span class="font-label-ticker-xs text-label-ticker-xs text-outline uppercase">SPREAD</span>
+<span class="font-label-ticker-xs text-label-ticker-xs px-1.5 py-0.5 rounded bg-surface-bright text-on-surface font-bold">1.2 PIPS</span>
+</div>
+<div class="flex flex-col">
+<span class="font-label-ticker-xs text-label-ticker-xs text-outline">ASK (BUY)</span>
+<span class="font-label-data-lg text-label-data-lg text-secondary font-bold tracking-tight" id="live-ask">1.08464</span>
+</div>
+</div>
+<!-- 24h Metrics -->
+<div class="hidden md:flex items-center gap-space-md bg-surface-container px-space-md py-1 rounded">
+<div>
+<span class="font-label-ticker-xs text-label-ticker-xs text-outline">24H CHG</span>
+<p class="font-label-data-sm text-label-data-sm text-secondary font-bold">+0.34% (+36.8 pips)</p>
+</div>
+<div class="w-px h-6 bg-surface-bright"></div>
+<div>
+<span class="font-label-ticker-xs text-label-ticker-xs text-outline">24H HIGH / LOW</span>
+<p class="font-label-data-sm text-label-data-sm text-on-surface">1.08710 / 1.08092</p>
+</div>
+<div class="w-px h-6 bg-surface-bright"></div>
+<div>
+<span class="font-label-ticker-xs text-label-ticker-xs text-outline">SESSION STATE</span>
+<div class="flex items-center gap-1">
+<span class="w-2 h-2 rounded-full bg-secondary animate-pulse"></span>
+<span class="font-label-ticker-xs text-label-ticker-xs font-semibold text-secondary">LONDON / NY OVERLAP</span>
+</div>
+</div>
+</div>
+</div>
+<!-- Timeframes & Interactive Mode Toggle -->
+<div class="flex items-center gap-space-md flex-wrap">
+<!-- Timeframe Array -->
+<div class="flex items-center bg-surface-container p-0.5 rounded gap-0.5">
+<button class="timeframe-btn px-2 py-0.5 font-label-ticker-xs text-label-ticker-xs text-outline hover:text-on-surface rounded transition-colors" data-tf="1s">1s</button>
+<button class="timeframe-btn px-2 py-0.5 font-label-ticker-xs text-label-ticker-xs text-outline hover:text-on-surface rounded transition-colors" data-tf="5s">5s</button>
+<button class="timeframe-btn px-2 py-0.5 font-label-ticker-xs text-label-ticker-xs text-outline hover:text-on-surface rounded transition-colors" data-tf="1m">1m</button>
+<button class="timeframe-btn px-2 py-0.5 font-label-ticker-xs text-label-ticker-xs text-outline hover:text-on-surface rounded transition-colors" data-tf="3m">3m</button>
+<button class="timeframe-btn px-2 py-0.5 font-label-ticker-xs text-label-ticker-xs bg-primary-container text-on-primary-container font-bold rounded shadow-sm" data-tf="5m">5m</button>
+<button class="timeframe-btn px-2 py-0.5 font-label-ticker-xs text-label-ticker-xs text-outline hover:text-on-surface rounded transition-colors" data-tf="15m">15m</button>
+<button class="timeframe-btn px-2 py-0.5 font-label-ticker-xs text-label-ticker-xs text-outline hover:text-on-surface rounded transition-colors" data-tf="1h">1h</button>
+<button class="timeframe-btn px-2 py-0.5 font-label-ticker-xs text-label-ticker-xs text-outline hover:text-on-surface rounded transition-colors" data-tf="4h">4h</button>
+<button class="timeframe-btn px-2 py-0.5 font-label-ticker-xs text-label-ticker-xs text-outline hover:text-on-surface rounded transition-colors" data-tf="1D">1D</button>
+</div>
+<!-- Mode Switcher -->
+<div class="flex items-center bg-surface-container-lowest p-0.5 rounded">
+<button class="px-2.5 py-1 rounded font-label-ticker-xs text-label-ticker-xs bg-surface-container-high text-primary font-bold shadow-sm flex items-center gap-1" id="btn-pro-mode">
+<span class="w-1.5 h-1.5 rounded-full bg-primary"></span>
+          PRO MODE
+        </button>
+<button class="px-2.5 py-1 rounded font-label-ticker-xs text-label-ticker-xs text-outline-variant hover:text-on-surface flex items-center gap-1 transition-colors" id="btn-news-mode">
+<span class="w-1.5 h-1.5 rounded-full bg-outline-variant"></span>
+          NEWS MODE
+        </button>
+</div>
+</div>
+</header>
+<!-- 3-COLUMN WORKSPACE (Left: Scanner, Center: Chart Workbench, Right: AI Signal Engine) -->
+<div class="grid grid-cols-1 xl:grid-cols-12 gap-space-sm w-full">
+<!-- LEFT PANEL: ASSET SCANNER & WATCHLIST (Col Span 3) -->
+<div class="xl:col-span-3 flex flex-col bg-surface-container-low rounded-lg p-space-sm gap-space-sm shadow-md">
+<!-- Panel Header & Quick Filters -->
+<div class="flex items-center justify-between pb-1">
+<div class="flex items-center gap-1.5">
+<span class="material-symbols-outlined text-primary text-[18px]">radar</span>
+<span class="font-title-md text-title-md font-bold text-on-surface">Asset Radar</span>
+</div>
+<span class="font-label-ticker-xs text-label-ticker-xs px-1.5 py-0.5 rounded bg-surface-container text-secondary font-mono">28 PAIRS POLLING</span>
+</div>
+<!-- Search Input -->
+<div class="relative w-full">
+<span class="material-symbols-outlined absolute left-2.5 top-2 text-[16px] text-outline">search</span>
+<input class="w-full bg-surface-container-lowest text-on-surface font-label-data-sm text-label-data-sm pl-8 pr-3 py-1.5 rounded focus:bg-surface-container-high outline-none transition-colors" id="symbol-search" placeholder="Filter symbol, asset or tag..." type="text"/>
+</div>
+<!-- Asset Category Filter Pills -->
+<div class="flex items-center gap-1 overflow-x-auto pb-1">
+<button class="cat-pill whitespace-nowrap px-2 py-0.5 rounded font-label-ticker-xs text-label-ticker-xs bg-primary text-on-primary font-bold">Majors</button>
+<button class="cat-pill whitespace-nowrap px-2 py-0.5 rounded font-label-ticker-xs text-label-ticker-xs bg-surface-container-high text-on-surface-variant hover:text-on-surface">Minors</button>
+<button class="cat-pill whitespace-nowrap px-2 py-0.5 rounded font-label-ticker-xs text-label-ticker-xs bg-surface-container-high text-on-surface-variant hover:text-on-surface">Gold (XAU)</button>
+<button class="cat-pill whitespace-nowrap px-2 py-0.5 rounded font-label-ticker-xs text-label-ticker-xs bg-surface-container-high text-on-surface-variant hover:text-on-surface">Silver</button>
+<button class="cat-pill whitespace-nowrap px-2 py-0.5 rounded font-label-ticker-xs text-label-ticker-xs bg-surface-container-high text-on-surface-variant hover:text-on-surface">Crypto</button>
+<button class="cat-pill whitespace-nowrap px-2 py-0.5 rounded font-label-ticker-xs text-label-ticker-xs bg-surface-container-high text-on-surface-variant hover:text-on-surface">Indices</button>
+</div>
+<!-- Live Asset Table -->
+<div class="overflow-y-auto max-h-[560px] flex flex-col gap-1 pr-0.5">
+<!-- Active Row: EUR/USD -->
+<div class="flex items-center justify-between p-2 rounded bg-surface-container-high shadow-sm cursor-pointer hover:bg-surface-bright transition-all">
+<div class="flex flex-col">
+<div class="flex items-center gap-1.5">
+<span class="font-label-data-md text-label-data-md font-bold text-on-surface">EUR/USD</span>
+<span class="w-1.5 h-1.5 rounded-full bg-secondary animate-ping"></span>
+</div>
+<span class="font-label-ticker-xs text-label-ticker-xs text-secondary font-mono">STRONG BUY [5m]</span>
+</div>
+<div class="flex flex-col items-end">
+<span class="font-label-data-sm text-label-data-sm font-semibold text-on-surface">1.08458</span>
+<div class="flex items-center gap-1">
+<span class="font-label-ticker-xs text-label-ticker-xs text-secondary font-bold">+0.34%</span>
+<span class="font-label-ticker-xs text-label-ticker-xs px-1 py-0.2 rounded bg-tertiary-container/30 text-tertiary font-mono">92 AI</span>
+</div>
+</div>
+</div>
+<!-- Row: GBP/USD -->
+<div class="flex items-center justify-between p-2 rounded bg-surface-container hover:bg-surface-container-high transition-colors cursor-pointer">
+<div class="flex flex-col">
+<div class="flex items-center gap-1">
+<span class="font-label-data-md text-label-data-md font-bold text-on-surface">GBP/USD</span>
+</div>
+<span class="font-label-ticker-xs text-label-ticker-xs text-secondary font-mono">BULLISH PULLBACK</span>
+</div>
+<div class="flex flex-col items-end">
+<span class="font-label-data-sm text-label-data-sm font-semibold text-on-surface">1.27415</span>
+<div class="flex items-center gap-1">
+<span class="font-label-ticker-xs text-label-ticker-xs text-secondary font-bold">+0.48%</span>
+<span class="font-label-ticker-xs text-label-ticker-xs px-1 py-0.2 rounded bg-surface-bright text-on-surface-variant font-mono">78 AI</span>
+</div>
+</div>
+</div>
+<!-- Row: XAU/USD Gold -->
+<div class="flex items-center justify-between p-2 rounded bg-surface-container hover:bg-surface-container-high transition-colors cursor-pointer">
+<div class="flex flex-col">
+<div class="flex items-center gap-1">
+<span class="font-label-data-md text-label-data-md font-bold text-on-surface">XAU/USD</span>
+<span class="font-label-ticker-xs text-label-ticker-xs px-1 rounded bg-surface-container-highest text-tertiary">GOLD</span>
+</div>
+<span class="font-label-ticker-xs text-label-ticker-xs text-secondary font-mono">RANGE EXPANSION</span>
+</div>
+<div class="flex flex-col items-end">
+<span class="font-label-data-sm text-label-data-sm font-semibold text-secondary">2386.40</span>
+<div class="flex items-center gap-1">
+<span class="font-label-ticker-xs text-label-ticker-xs text-secondary font-bold">+0.85%</span>
+<span class="font-label-ticker-xs text-label-ticker-xs px-1 py-0.2 rounded bg-tertiary-container/30 text-tertiary font-mono">88 AI</span>
+</div>
+</div>
+</div>
+<!-- Row: USD/JPY -->
+<div class="flex items-center justify-between p-2 rounded bg-surface-container hover:bg-surface-container-high transition-colors cursor-pointer">
+<div class="flex flex-col">
+<div class="flex items-center gap-1">
+<span class="font-label-data-md text-label-data-md font-bold text-on-surface">USD/JPY</span>
+</div>
+<span class="font-label-ticker-xs text-label-ticker-xs text-error font-mono">BEARISH BREAK</span>
+</div>
+<div class="flex flex-col items-end">
+<span class="font-label-data-sm text-label-data-sm font-semibold text-error">154.218</span>
+<div class="flex items-center gap-1">
+<span class="font-label-ticker-xs text-label-ticker-xs text-error font-bold">-0.24%</span>
+<span class="font-label-ticker-xs text-label-ticker-xs px-1 py-0.2 rounded bg-surface-bright text-on-surface-variant font-mono">64 AI</span>
+</div>
+</div>
+</div>
+<!-- Row: BTC/USD -->
+<div class="flex items-center justify-between p-2 rounded bg-surface-container hover:bg-surface-container-high transition-colors cursor-pointer">
+<div class="flex flex-col">
+<div class="flex items-center gap-1">
+<span class="font-label-data-md text-label-data-md font-bold text-on-surface">BTC/USD</span>
+<span class="font-label-ticker-xs text-label-ticker-xs px-1 rounded bg-surface-container-highest text-primary">CRYPTO</span>
+</div>
+<span class="font-label-ticker-xs text-label-ticker-xs text-secondary font-mono">ACCUMULATION OB</span>
+</div>
+<div class="flex flex-col items-end">
+<span class="font-label-data-sm text-label-data-sm font-semibold text-secondary">64810.0</span>
+<div class="flex items-center gap-1">
+<span class="font-label-ticker-xs text-label-ticker-xs text-secondary font-bold">+2.41%</span>
+<span class="font-label-ticker-xs text-label-ticker-xs px-1 py-0.2 rounded bg-tertiary-container/30 text-tertiary font-mono">81 AI</span>
+</div>
+</div>
+</div>
+<!-- Row: US30 -->
+<div class="flex items-center justify-between p-2 rounded bg-surface-container hover:bg-surface-container-high transition-colors cursor-pointer">
+<div class="flex flex-col">
+<div class="flex items-center gap-1">
+<span class="font-label-data-md text-label-data-md font-bold text-on-surface">US30 DOW</span>
+<span class="font-label-ticker-xs text-label-ticker-xs px-1 rounded bg-surface-container-highest text-outline">INDEX</span>
+</div>
+<span class="font-label-ticker-xs text-label-ticker-xs text-outline font-mono">SIDEWAYS CONSOLIDATION</span>
+</div>
+<div class="flex flex-col items-end">
+<span class="font-label-data-sm text-label-data-sm font-semibold text-on-surface">39872.2</span>
+<div class="flex items-center gap-1">
+<span class="font-label-ticker-xs text-label-ticker-xs text-outline font-bold">+0.04%</span>
+<span class="font-label-ticker-xs text-label-ticker-xs px-1 py-0.2 rounded bg-surface-bright text-on-surface-variant font-mono">49 AI</span>
+</div>
+</div>
+</div>
+<!-- Row: AUD/USD -->
+<div class="flex items-center justify-between p-2 rounded bg-surface-container hover:bg-surface-container-high transition-colors cursor-pointer">
+<div class="flex flex-col">
+<div class="flex items-center gap-1">
+<span class="font-label-data-md text-label-data-md font-bold text-on-surface">AUD/USD</span>
+</div>
+<span class="font-label-ticker-xs text-label-ticker-xs text-secondary font-mono">UPTREND CONTINUATION</span>
+</div>
+<div class="flex flex-col items-end">
+<span class="font-label-data-sm text-label-data-sm font-semibold text-on-surface">0.66512</span>
+<div class="flex items-center gap-1">
+<span class="font-label-ticker-xs text-label-ticker-xs text-secondary font-bold">+0.22%</span>
+<span class="font-label-ticker-xs text-label-ticker-xs px-1 py-0.2 rounded bg-surface-bright text-on-surface-variant font-mono">75 AI</span>
+</div>
+</div>
+</div>
+</div>
+<!-- Quick Market Sentiment Meter -->
+<div class="mt-auto bg-surface-container p-space-sm rounded flex flex-col gap-1.5">
+<div class="flex items-center justify-between">
+<span class="font-label-ticker-xs text-label-ticker-xs text-outline uppercase font-mono">Desk Flow Delta</span>
+<span class="font-label-ticker-xs text-label-ticker-xs text-secondary font-bold font-mono">+68% NET BUYERS</span>
+</div>
+<div class="w-full h-1.5 bg-surface-container-highest rounded-full overflow-hidden flex">
+<div class="bg-secondary h-full" style="width: 68%;"></div>
+<div class="bg-error h-full" style="width: 32%;"></div>
+</div>
+</div>
+</div>
+<!-- CENTER MAIN PANEL: TRADINGVIEW-GRADE INTERACTIVE CHART (Col Span 6) -->
+<div class="xl:col-span-6 flex flex-col bg-surface-container-low rounded-lg p-space-sm gap-space-sm shadow-md relative">
+<!-- Chart Controls & Toolbar -->
+<div class="flex items-center justify-between flex-wrap gap-2 pb-1 bg-surface-container-low">
+<div class="flex items-center gap-1 bg-surface-container p-0.5 rounded">
+<button class="p-1 rounded text-primary hover:bg-surface-container-high transition-colors" title="Crosshair Tool">
+<span class="material-symbols-outlined text-[18px]">crisis_alert</span>
+</button>
+<button class="p-1 rounded text-outline hover:text-on-surface hover:bg-surface-container-high transition-colors" title="Trendline Tool">
+<span class="material-symbols-outlined text-[18px]">polyline</span>
+</button>
+<button class="p-1 rounded text-outline hover:text-on-surface hover:bg-surface-container-high transition-colors" title="Fib Retracement">
+<span class="material-symbols-outlined text-[18px]">straighten</span>
+</button>
+<button class="p-1 rounded text-tertiary bg-surface-container-high hover:bg-surface-bright transition-colors" title="SMC Liquidity & FVG Boxes">
+<span class="material-symbols-outlined text-[18px]">select_all</span>
+</button>
+<button class="p-1 rounded text-outline hover:text-on-surface hover:bg-surface-container-high transition-colors" title="Indicators Settings">
+<span class="material-symbols-outlined text-[18px]">tune</span>
+</button>
+</div>
+<!-- Overlays Status Legend -->
+<div class="flex items-center gap-space-sm font-label-ticker-xs text-label-ticker-xs">
+<div class="flex items-center gap-1">
+<span class="w-2.5 h-1 rounded-sm bg-primary"></span>
+<span class="text-on-surface-variant font-mono">EMA 21 (1.08428)</span>
+</div>
+<div class="flex items-center gap-1">
+<span class="w-2.5 h-1 rounded-sm bg-tertiary"></span>
+<span class="text-on-surface-variant font-mono">EMA 50 (1.08395)</span>
+</div>
+<div class="flex items-center gap-1">
+<span class="w-2 h-2 rounded bg-secondary-container"></span>
+<span class="text-secondary font-mono">5m FVG MITIGATION</span>
+</div>
+</div>
+</div>
+<!-- High-Density Candlestick Chart SVG Canvas Simulation -->
+<div class="relative w-full h-[470px] bg-surface-container-lowest rounded overflow-hidden flex flex-col justify-between">
+<!-- Watermark Symbol -->
+<div class="absolute inset-0 flex items-center justify-center pointer-events-none select-none">
+<span class="font-display-lg text-[72px] font-bold text-surface-container-highest/20 tracking-tighter">EURUSD 5M</span>
+</div>
+<!-- Chart Grid Lines & Candlesticks SVG -->
+<svg class="w-full h-full" preserveaspectratio="none" viewbox="0 0 800 420">
+<defs>
+<lineargradient id="fvgGrad" x1="0" x2="0" y1="0" y2="1">
+<stop offset="0%" stop-color="#4edea3" stop-opacity="0.28"></stop>
+<stop offset="100%" stop-color="#4edea3" stop-opacity="0.04"></stop>
+</lineargradient>
+<lineargradient id="obGrad" x1="0" x2="0" y1="0" y2="1">
+<stop offset="0%" stop-color="#a078ff" stop-opacity="0.25"></stop>
+<stop offset="100%" stop-color="#a078ff" stop-opacity="0.05"></stop>
+</lineargradient>
+</defs>
+<!-- Horizontal Grid & Price Ticks -->
+<line stroke="#1c2028" stroke-dasharray="3,3" stroke-width="1" x1="0" x2="800" y1="60" y2="60"></line>
+<line stroke="#1c2028" stroke-dasharray="3,3" stroke-width="1" x1="0" x2="800" y1="130" y2="130"></line>
+<line stroke="#1c2028" stroke-dasharray="3,3" stroke-width="1" x1="0" x2="800" y1="200" y2="200"></line>
+<line stroke="#1c2028" stroke-dasharray="3,3" stroke-width="1" x1="0" x2="800" y1="270" y2="270"></line>
+<line stroke="#1c2028" stroke-dasharray="3,3" stroke-width="1" x1="0" x2="800" y1="340" y2="340"></line>
+<!-- Vertical Time Grid -->
+<line stroke="#1c2028" stroke-dasharray="3,3" stroke-width="1" x1="160" x2="160" y1="0" y2="420"></line>
+<line stroke="#1c2028" stroke-dasharray="3,3" stroke-width="1" x1="320" x2="320" y1="0" y2="420"></line>
+<line stroke="#1c2028" stroke-dasharray="3,3" stroke-width="1" x1="480" x2="480" y1="0" y2="420"></line>
+<line stroke="#1c2028" stroke-dasharray="3,3" stroke-width="1" x1="640" x2="640" y1="0" y2="420"></line>
+<!-- Order Block (OB Zone) -->
+<rect fill="url(#obGrad)" height="35" rx="2" width="220" x="220" y="275"></rect>
+<text fill="#d0bcff" font-family="JetBrains Mono" font-size="10" font-weight="bold" x="226" y="295">+OB Bullish Demand [1.08400 - 1.08375]</text>
+<!-- Fair Value Gap (FVG Zone) -->
+<rect fill="url(#fvgGrad)" height="42" rx="2" width="280" x="440" y="225"></rect>
+<text fill="#4edea3" font-family="JetBrains Mono" font-size="10" font-weight="bold" x="446" y="244">5m FVG (Imbalance Mitigated)</text>
+<!-- Liquidity Sweep Annotation Line -->
+<line stroke="#ffb4ab" stroke-dasharray="4,4" stroke-width="1.5" x1="80" x2="390" y1="110" y2="110"></line>
+<text fill="#ffb4ab" font-family="JetBrains Mono" font-size="9" font-weight="bold" x="90" y="102">EQH LIQUIDITY SWEEP (1.08580)</text>
+<!-- Smooth Moving Average Curves -->
+<!-- EMA 50 (Purple) -->
+<path d="M 0,310 Q 180,315 340,290 T 560,250 T 800,210" fill="none" stroke="#a078ff" stroke-width="2"></path>
+<!-- EMA 21 (Cyan/Primary) -->
+<path d="M 0,325 Q 160,335 320,295 T 540,230 T 800,175" fill="none" stroke="#adc6ff" stroke-width="2"></path>
+<!-- Candlesticks Array -->
+<!-- Candle 1: Red -->
+<line stroke="#ffb4ab" stroke-width="1.5" x1="50" x2="50" y1="120" y2="190"></line>
+<rect fill="#93000a" height="45" width="12" x="44" y="135"></rect>
+<!-- Candle 2: Red -->
+<line stroke="#ffb4ab" stroke-width="1.5" x1="90" x2="90" y1="150" y2="230"></line>
+<rect fill="#93000a" height="50" width="12" x="84" y="165"></rect>
+<!-- Candle 3: Green -->
+<line stroke="#4edea3" stroke-width="1.5" x1="130" x2="130" y1="170" y2="240"></line>
+<rect fill="#00a572" height="42" width="12" x="124" y="180"></rect>
+<!-- Candle 4: Red sweep down -->
+<line stroke="#ffb4ab" stroke-width="1.5" x1="170" x2="170" y1="180" y2="300"></line>
+<rect fill="#93000a" height="70" width="12" x="164" y="210"></rect>
+<!-- Candle 5: Hammer reversal -->
+<line stroke="#4edea3" stroke-width="1.5" x1="210" x2="210" y1="260" y2="330"></line>
+<rect fill="#00a572" height="25" width="12" x="204" y="265"></rect>
+<!-- Candle 6: Strong Green -->
+<line stroke="#4edea3" stroke-width="1.5" x1="250" x2="250" y1="240" y2="290"></line>
+<rect fill="#00a572" height="40" width="12" x="244" y="245"></rect>
+<!-- Candle 7: Green continuation -->
+<line stroke="#4edea3" stroke-width="1.5" x1="290" x2="290" y1="220" y2="270"></line>
+<rect fill="#00a572" height="35" width="12" x="284" y="225"></rect>
+<!-- Candle 8: Consolidation doji -->
+<line stroke="#dfe2ee" stroke-width="1.5" x1="330" x2="330" y1="215" y2="255"></line>
+<rect fill="#424754" height="8" width="12" x="324" y="230"></rect>
+<!-- Candle 9: Red pullback into FVG -->
+<line stroke="#ffb4ab" stroke-width="1.5" x1="370" x2="370" y1="225" y2="285"></line>
+<rect fill="#93000a" height="38" width="12" x="364" y="235"></rect>
+<!-- Candle 10: Retest dip into 1.08400 level -->
+<line stroke="#ffb4ab" stroke-width="1.5" x1="410" x2="410" y1="245" y2="310"></line>
+<rect fill="#93000a" height="35" width="12" x="404" y="260"></rect>
+<!-- Candle 11: Massive Bullish Engulfing (CHoCH trigger) -->
+<line stroke="#4edea3" stroke-width="1.5" x1="450" x2="450" y1="210" y2="295"></line>
+<rect fill="#00a572" height="65" width="12" x="444" y="220"></rect>
+<!-- Candle 12: Bullish follow through -->
+<line stroke="#4edea3" stroke-width="1.5" x1="490" x2="490" y1="190" y2="250"></line>
+<rect fill="#00a572" height="45" width="12" x="484" y="200"></rect>
+<!-- Candle 13: High volume green run -->
+<line stroke="#4edea3" stroke-width="1.5" x1="530" x2="530" y1="170" y2="225"></line>
+<rect fill="#00a572" height="40" width="12" x="524" y="175"></rect>
+<!-- Candle 14: Minor pullback -->
+<line stroke="#ffb4ab" stroke-width="1.5" x1="570" x2="570" y1="180" y2="230"></line>
+<rect fill="#93000a" height="20" width="12" x="564" y="185"></rect>
+<!-- Candle 15: Entry candle -->
+<line stroke="#4edea3" stroke-width="1.5" x1="610" x2="610" y1="170" y2="220"></line>
+<rect fill="#00a572" height="30" width="12" x="604" y="175"></rect>
+<!-- Candle 16: Live pulsating candle -->
+<line stroke="#4edea3" stroke-width="2" x1="650" x2="650" y1="160" y2="205"></line>
+<rect fill="#4edea3" height="32" width="12" x="644" y="165"></rect>
+<!-- AI Signal Entry Marker on Chart -->
+<g transform="translate(644, 202)">
+<polygon fill="#4edea3" points="6,0 12,12 0,12"></polygon>
+<circle cx="6" cy="6" fill="none" opacity="0.6" r="14" stroke="#4edea3" stroke-width="1.5">
+<animate attributename="r" dur="2s" repeatcount="indefinite" values="6;20;6"></animate>
+<animate attributename="opacity" dur="2s" repeatcount="indefinite" values="0.8;0;0.8"></animate>
+</circle>
+</g>
+<!-- Target & Stop Projections -->
+<!-- TP 1 Line -->
+<line stroke="#4edea3" stroke-dasharray="5,3" stroke-width="1.5" x1="610" x2="790" y1="130" y2="130"></line>
+<text fill="#4edea3" font-family="JetBrains Mono" font-size="10" font-weight="bold" x="700" y="124">TP1 1.08525 (+10p)</text>
+<!-- Live Price Line -->
+<line stroke="#adc6ff" stroke-dasharray="2,2" stroke-width="1.5" x1="0" x2="800" y1="172" y2="172"></line>
+<rect fill="#4d8eff" height="20" rx="2" width="80" x="715" y="162"></rect>
+<text fill="#00285d" font-family="JetBrains Mono" font-size="11" font-weight="bold" x="723" y="176">1.08458</text>
+<!-- Stop Loss Line -->
+<line stroke="#ffb4ab" stroke-dasharray="5,3" stroke-width="1.5" x1="610" x2="790" y1="270" y2="270"></line>
+<text fill="#ffb4ab" font-family="JetBrains Mono" font-size="10" font-weight="bold" x="700" y="265">SL 1.08375 (-5p)</text>
+</svg>
+<!-- Dynamic Indicator Mini Strip (RSI + MACD Histogram) -->
+<div class="h-20 bg-surface-container/80 backdrop-blur-md px-space-md py-1.5 flex items-center justify-between">
+<div class="flex items-center gap-space-md">
+<div>
+<span class="font-label-ticker-xs text-label-ticker-xs text-outline">RSI (14)</span>
+<p class="font-label-data-sm text-label-data-sm text-secondary font-bold font-mono">54.2 <span class="text-outline-variant font-normal">MOMENTUM UP</span></p>
+</div>
+<div class="w-24 h-6 bg-surface-container-highest rounded overflow-hidden p-0.5">
+<svg class="w-full h-full" viewbox="0 0 100 25">
+<path d="M 0,18 Q 20,22 40,15 T 70,12 T 100,6" fill="none" stroke="#4edea3" stroke-width="2"></path>
+</svg>
+</div>
+</div>
+<div class="flex items-center gap-space-md">
+<div>
+<span class="font-label-ticker-xs text-label-ticker-xs text-outline">MACD HISTOGRAM [12, 26, 9]</span>
+<p class="font-label-data-sm text-label-data-sm text-secondary font-bold font-mono">+0.00014 <span class="text-outline-variant font-normal">EXPANDING</span></p>
+</div>
+<div class="flex items-end gap-1 h-6">
+<div class="w-1.5 h-2 bg-secondary/40 rounded-t-sm"></div>
+<div class="w-1.5 h-3 bg-secondary/60 rounded-t-sm"></div>
+<div class="w-1.5 h-4 bg-secondary/80 rounded-t-sm"></div>
+<div class="w-1.5 h-5 bg-secondary rounded-t-sm"></div>
+<div class="w-1.5 h-6 bg-secondary rounded-t-sm animate-pulse"></div>
+</div>
+</div>
+<div class="hidden sm:flex items-center gap-1 font-label-ticker-xs text-label-ticker-xs text-outline">
+<span class="w-1.5 h-1.5 rounded-full bg-secondary"></span>
+<span>CHoCH 15M CONFIRMED</span>
+</div>
+</div>
+</div>
+<!-- Quick Action Buttons Ladder -->
+<div class="grid grid-cols-2 sm:grid-cols-4 gap-space-sm pt-1">
+<button class="bg-secondary-container hover:bg-secondary text-on-secondary font-headline-sm text-headline-sm font-bold py-2 rounded flex flex-col items-center justify-center transition-all shadow-md active:scale-98" id="quick-buy-btn">
+<span class="font-label-ticker-xs text-label-ticker-xs opacity-90 uppercase">QUICK EXECUTE</span>
+<span>MARKET BUY</span>
+</button>
+<button class="bg-error-container/60 hover:bg-error-container text-on-error-container font-headline-sm text-headline-sm font-bold py-2 rounded flex flex-col items-center justify-center transition-all shadow-md active:scale-98">
+<span class="font-label-ticker-xs text-label-ticker-xs opacity-90 uppercase">QUICK EXECUTE</span>
+<span>MARKET SELL</span>
+</button>
+<div class="bg-surface-container p-1.5 rounded flex flex-col justify-center">
+<span class="font-label-ticker-xs text-label-ticker-xs text-outline">RISK EXPOSURE</span>
+<span class="font-label-data-sm text-label-data-sm font-bold text-on-surface">1.0% ($100.00 USD)</span>
+</div>
+<div class="bg-surface-container p-1.5 rounded flex flex-col justify-center">
+<span class="font-label-ticker-xs text-label-ticker-xs text-outline">EST. LOT SIZE</span>
+<span class="font-label-data-sm text-label-data-sm font-bold text-primary">2.00 STANDARD LOTS</span>
+</div>
+</div>
+</div>
+<!-- RIGHT PANEL: AI SIGNAL INTELLIGENCE & CONFIDENCE ENGINE (Col Span 3) -->
+<div class="xl:col-span-3 flex flex-col bg-surface-container-low rounded-lg p-space-sm gap-space-sm shadow-md">
+<!-- Panel Header & Pulse Signal Status -->
+<div class="flex items-center justify-between pb-1">
+<div class="flex items-center gap-1.5">
+<span class="material-symbols-outlined text-secondary text-[20px]">psychology</span>
+<span class="font-title-md text-title-md font-bold text-on-surface">AI Signal Engine</span>
+</div>
+<div class="flex items-center gap-1 px-2 py-0.5 rounded bg-secondary-container/20">
+<span class="w-2 h-2 rounded-full bg-secondary animate-ping"></span>
+<span class="font-label-ticker-xs text-label-ticker-xs font-bold text-secondary tracking-wider">ACTIVE SETUP</span>
+</div>
+</div>
+<!-- MAIN PROMINENT SIGNAL HERO CARD -->
+<div class="bg-surface-container-high rounded p-space-md flex flex-col gap-space-sm relative overflow-hidden shadow-sm">
+<!-- Direction Badge + Asset Pair -->
+<div class="flex items-center justify-between">
+<div>
+<span class="font-label-ticker-xs text-label-ticker-xs text-outline font-mono">PRIMARY PAIR</span>
+<h3 class="font-headline-lg text-headline-lg font-bold text-on-surface">EUR / USD</h3>
+</div>
+<div class="flex items-center gap-1.5 px-3 py-1.5 rounded bg-secondary-container text-on-secondary font-headline-sm text-headline-sm font-black shadow-md tracking-wider">
+<span class="material-symbols-outlined text-[22px]">arrow_upward</span>
+<span>UP / BUY</span>
+</div>
+</div>
+<!-- BANGLADESH STANDARD TIME (BST UTC+6) CHRONOMETRY BOX -->
+<div class="bg-surface-container-lowest p-space-sm rounded flex flex-col gap-1">
+<div class="flex items-center justify-between">
+<span class="font-label-ticker-xs text-label-ticker-xs text-outline flex items-center gap-1">
+<span class="material-symbols-outlined text-[14px] text-secondary">schedule</span>
+              BANGLADESH CLOCK (BST UTC+6)
+            </span>
+<span class="font-label-data-sm text-label-data-sm font-bold text-secondary font-mono" id="live-bst-clock">08:35:12 PM BST</span>
+</div>
+<div class="grid grid-cols-3 gap-1 pt-1 text-center font-mono">
+<div class="bg-surface-container p-1 rounded">
+<span class="font-label-ticker-xs text-label-ticker-xs text-outline block">ENTRY BST</span>
+<span class="font-label-data-sm text-label-data-sm font-bold text-on-surface">08:35 PM</span>
+</div>
+<div class="bg-surface-container p-1 rounded">
+<span class="font-label-ticker-xs text-label-ticker-xs text-outline block">HOLDING</span>
+<span class="font-label-data-sm text-label-data-sm font-bold text-primary">5 - 15 Mins</span>
+</div>
+<div class="bg-surface-container p-1 rounded">
+<span class="font-label-ticker-xs text-label-ticker-xs text-outline block">EXPIRATION</span>
+<span class="font-label-data-sm text-label-data-sm font-bold text-tertiary">08:50 PM</span>
+</div>
+</div>
+</div>
+<!-- Localized Bengali Voice Alert Preview -->
+<div class="bg-tertiary-container/15 p-space-sm rounded flex flex-col gap-1">
+<div class="flex items-center justify-between">
+<span class="font-label-ticker-xs text-label-ticker-xs text-tertiary font-bold flex items-center gap-1">
+<span class="material-symbols-outlined text-[16px]">record_voice_over</span>
+              BANGLA VOICE COPILOT
+            </span>
+<button class="flex items-center gap-1 px-1.5 py-0.5 rounded bg-tertiary text-on-tertiary font-label-ticker-xs text-label-ticker-xs font-semibold hover:opacity-90 transition-opacity" id="voice-preview-btn">
+<span class="material-symbols-outlined text-[13px]">volume_up</span>
+              প্লে করুন
+            </button>
+</div>
+<p class="font-body-sm text-body-sm text-on-surface font-medium leading-relaxed italic">
+            “ভাই, বাংলাদেশ সময় রাত ৮:৩৫ মিনিটে EUR/USD-এ UP/BUY সেটআপ পাওয়া গেছে।”
+          </p>
+</div>
+<!-- Realistic Dynamic AI Confidence Meter (82.4%) -->
+<div class="flex flex-col gap-1 pt-1">
+<div class="flex items-center justify-between">
+<span class="font-label-ticker-xs text-label-ticker-xs text-outline uppercase font-mono">Quant Confidence Score</span>
+<span class="font-label-data-lg text-label-data-lg font-bold text-secondary font-mono">82.4%</span>
+</div>
+<div class="w-full bg-surface-container-lowest h-2 rounded-full overflow-hidden">
+<div class="bg-secondary h-full rounded-full transition-all duration-700 shadow-sm" style="width: 82.4%;"></div>
+</div>
+<span class="font-label-ticker-xs text-label-ticker-xs text-outline-variant font-mono">Calibrated across 1,420 historical forward-tested setups (Never 100%).</span>
+</div>
+</div>
+<!-- Multi-Method Confluence Breakdown -->
+<div class="flex flex-col gap-1 bg-surface-container p-space-sm rounded max-h-[175px] overflow-y-auto">
+<span class="font-label-ticker-xs text-label-ticker-xs text-outline uppercase font-mono tracking-wider">Multi-Model Confluence</span>
+<div class="flex items-start gap-2 py-0.5">
+<span class="material-symbols-outlined text-secondary text-[16px] shrink-0">check_circle</span>
+<span class="font-label-data-sm text-label-data-sm text-on-surface"><strong class="text-secondary">Market Structure:</strong> CHoCH confirmed on 15m frame</span>
+</div>
+<div class="flex items-start gap-2 py-0.5">
+<span class="material-symbols-outlined text-secondary text-[16px] shrink-0">check_circle</span>
+<span class="font-label-data-sm text-label-data-sm text-on-surface"><strong class="text-secondary">Indicator Convergence:</strong> EMA 21 > 50 + RSI(14) 54.2 + MACD expansion</span>
+</div>
+<div class="flex items-start gap-2 py-0.5">
+<span class="material-symbols-outlined text-secondary text-[16px] shrink-0">check_circle</span>
+<span class="font-label-data-sm text-label-data-sm text-on-surface"><strong class="text-secondary">SMC & Price Action:</strong> 5m FVG Mitigation + Engulfing bar</span>
+</div>
+<div class="flex items-start gap-2 py-0.5">
+<span class="material-symbols-outlined text-secondary text-[16px] shrink-0">check_circle</span>
+<span class="font-label-data-sm text-label-data-sm text-on-surface"><strong class="text-secondary">Institutional Barrier:</strong> Clean bounce off 1.08400 round number</span>
+</div>
+<div class="flex items-start gap-2 py-0.5">
+<span class="material-symbols-outlined text-secondary text-[16px] shrink-0">check_circle</span>
+<span class="font-label-data-sm text-label-data-sm text-on-surface"><strong class="text-secondary">Economic Gate:</strong> No High-Impact USD release within 45 mins</span>
+</div>
+</div>
+<!-- Risk Gate & Precision Parameters -->
+<div class="bg-surface-container-high p-space-sm rounded flex flex-col gap-1.5">
+<div class="flex items-center justify-between">
+<span class="font-label-ticker-xs text-label-ticker-xs text-outline uppercase font-mono">RISK PROFILE: MEDIUM</span>
+<span class="font-label-ticker-xs text-label-ticker-xs px-1.5 py-0.5 rounded bg-primary-container text-on-primary-container font-bold">1% MAX LOSS</span>
+</div>
+<div class="grid grid-cols-2 gap-1.5 font-mono">
+<div class="bg-surface-container p-1 rounded">
+<span class="font-label-ticker-xs text-label-ticker-xs text-outline block">ENTRY LEVEL</span>
+<span class="font-label-data-sm text-label-data-sm text-on-surface font-bold">1.08425</span>
+</div>
+<div class="bg-surface-container p-1 rounded">
+<span class="font-label-ticker-xs text-label-ticker-xs text-error block">STOP LOSS (5 pips)</span>
+<span class="font-label-data-sm text-label-data-sm text-error font-bold">1.08375</span>
+</div>
+<div class="bg-surface-container p-1 rounded">
+<span class="font-label-ticker-xs text-label-ticker-xs text-secondary block">TP1 (1:2 R:R)</span>
+<span class="font-label-data-sm text-label-data-sm text-secondary font-bold">1.08525 (+10p)</span>
+</div>
+<div class="bg-surface-container p-1 rounded">
+<span class="font-label-ticker-xs text-label-ticker-xs text-secondary block">TP2 (1:4 R:R)</span>
+<span class="font-label-data-sm text-label-data-sm text-secondary font-bold">1.08625 (+20p)</span>
+</div>
+</div>
+<p class="font-label-ticker-xs text-label-ticker-xs text-outline-variant font-mono">
+          * Invalidation trigger: 5-minute candle closes below 1.08370.
+        </p>
+</div>
+</div>
+</div>
+<!-- BOTTOM DOCKABLE PANEL: LEDGER, ECONOMIC FEED & STRATEGY TELEMETRY -->
+<div class="w-full bg-surface-container-low rounded-lg p-space-sm flex flex-col gap-space-sm shadow-md">
+<!-- Dock Navigation Tabs -->
+<div class="flex items-center justify-between flex-wrap gap-2 pb-1 bg-surface-container-low">
+<div class="flex items-center gap-1">
+<button class="dock-tab px-3 py-1 rounded font-label-ticker-xs text-label-ticker-xs bg-primary text-on-primary font-bold shadow-sm" data-dock="signals">
+          SIGNAL HISTORY & WIN-LOSS LEDGER
+        </button>
+<button class="dock-tab px-3 py-1 rounded font-label-ticker-xs text-label-ticker-xs bg-surface-container text-on-surface-variant hover:text-on-surface transition-colors" data-dock="calendar">
+          ECONOMIC IMPACT FEED (NEWS CRAWLER)
+        </button>
+<button class="dock-tab px-3 py-1 rounded font-label-ticker-xs text-label-ticker-xs bg-surface-container text-on-surface-variant hover:text-on-surface transition-colors" data-dock="telemetry">
+          260+ STRATEGY TELEMETRY & WEIGHTS
+        </button>
+</div>
+<!-- Execution Desk Summary -->
+<div class="flex items-center gap-space-md font-mono font-label-ticker-xs text-label-ticker-xs">
+<span class="text-outline">TODAY'S NET PROFIT:</span>
+<span class="text-secondary font-bold font-label-data-sm text-label-data-sm">+47.5 PIPS (+$4,750 USD)</span>
+<span class="text-outline">ACCURACY:</span>
+<span class="text-secondary font-bold font-label-data-sm text-label-data-sm">80.0% (4W / 1L)</span>
+</div>
+</div>
+<!-- TABULAR WIN-LOSS LEDGER VIEW -->
+<div class="overflow-x-auto w-full" id="dock-view-signals">
+<table class="w-full text-left font-mono">
+<thead>
+<tr class="bg-surface-container text-outline font-label-ticker-xs text-label-ticker-xs uppercase">
+<th class="py-1.5 px-3">EXEC ID</th>
+<th class="py-1.5 px-3">ENTRY BST</th>
+<th class="py-1.5 px-3">EXIT BST</th>
+<th class="py-1.5 px-3">ASSET</th>
+<th class="py-1.5 px-3">DIRECTION</th>
+<th class="py-1.5 px-3">STRATEGY / PATTERN</th>
+<th class="py-1.5 px-3">CONFIDENCE</th>
+<th class="py-1.5 px-3">RESULT DELTA</th>
+<th class="py-1.5 px-3 text-right">AUDIT HASH</th>
+</tr>
+</thead>
+<tbody class="divide-y divide-surface-container-highest/20 font-label-data-sm text-label-data-sm text-on-surface">
+<!-- Row 1 (Win) -->
+<tr class="hover:bg-surface-container transition-colors">
+<td class="py-1.5 px-3 text-outline">#QX-8941</td>
+<td class="py-1.5 px-3 font-semibold">07:15 PM</td>
+<td class="py-1.5 px-3 text-outline">07:28 PM</td>
+<td class="py-1.5 px-3 font-bold text-on-surface">GBP/USD</td>
+<td class="py-1.5 px-3">
+<span class="px-1.5 py-0.5 rounded bg-secondary-container/20 text-secondary font-bold font-label-ticker-xs text-label-ticker-xs">BUY</span>
+</td>
+<td class="py-1.5 px-3 text-on-surface-variant">London High Liquidity Run + 15m FVG</td>
+<td class="py-1.5 px-3 text-primary font-bold">84.2%</td>
+<td class="py-1.5 px-3 font-bold text-secondary">+18.4 PIPS (WIN)</td>
+<td class="py-1.5 px-3 text-right text-outline font-label-ticker-xs text-label-ticker-xs">0x4a9f...e102</td>
+</tr>
+<!-- Row 2 (Win) -->
+<tr class="hover:bg-surface-container transition-colors">
+<td class="py-1.5 px-3 text-outline">#QX-8940</td>
+<td class="py-1.5 px-3 font-semibold">06:05 PM</td>
+<td class="py-1.5 px-3 text-outline">06:17 PM</td>
+<td class="py-1.5 px-3 font-bold text-on-surface">EUR/USD</td>
+<td class="py-1.5 px-3">
+<span class="px-1.5 py-0.5 rounded bg-secondary-container/20 text-secondary font-bold font-label-ticker-xs text-label-ticker-xs">BUY</span>
+</td>
+<td class="py-1.5 px-3 text-on-surface-variant">Bullish CHoCH + EMA 21 Pullback</td>
+<td class="py-1.5 px-3 text-primary font-bold">79.8%</td>
+<td class="py-1.5 px-3 font-bold text-secondary">+12.1 PIPS (WIN)</td>
+<td class="py-1.5 px-3 text-right text-outline font-label-ticker-xs text-label-ticker-xs">0x81bd...99bb</td>
+</tr>
+<!-- Row 3 (Loss) -->
+<tr class="hover:bg-surface-container transition-colors">
+<td class="py-1.5 px-3 text-outline">#QX-8939</td>
+<td class="py-1.5 px-3 font-semibold">04:40 PM</td>
+<td class="py-1.5 px-3 text-outline">04:44 PM</td>
+<td class="py-1.5 px-3 font-bold text-on-surface">USD/JPY</td>
+<td class="py-1.5 px-3">
+<span class="px-1.5 py-0.5 rounded bg-error-container/20 text-error font-bold font-label-ticker-xs text-label-ticker-xs">SELL</span>
+</td>
+<td class="py-1.5 px-3 text-on-surface-variant">Asian Session Low Sweep + Rejection</td>
+<td class="py-1.5 px-3 text-outline font-bold">71.5%</td>
+<td class="py-1.5 px-3 font-bold text-error">-5.0 PIPS (STOPPED)</td>
+<td class="py-1.5 px-3 text-right text-outline font-label-ticker-xs text-label-ticker-xs">0xd34a...20ff</td>
+</tr>
+<!-- Row 4 (Win) -->
+<tr class="hover:bg-surface-container transition-colors">
+<td class="py-1.5 px-3 text-outline">#QX-8938</td>
+<td class="py-1.5 px-3 font-semibold">03:10 PM</td>
+<td class="py-1.5 px-3 text-outline">03:29 PM</td>
+<td class="py-1.5 px-3 font-bold text-on-surface">XAU/USD</td>
+<td class="py-1.5 px-3">
+<span class="px-1.5 py-0.5 rounded bg-secondary-container/20 text-secondary font-bold font-label-ticker-xs text-label-ticker-xs">BUY</span>
+</td>
+<td class="py-1.5 px-3 text-on-surface-variant">Order Block Mitigation & Golden Cross</td>
+<td class="py-1.5 px-3 text-primary font-bold">86.1%</td>
+<td class="py-1.5 px-3 font-bold text-secondary">+22.0 PIPS (WIN)</td>
+<td class="py-1.5 px-3 text-right text-outline font-label-ticker-xs text-label-ticker-xs">0xee01...7a44</td>
+</tr>
+</tbody>
+</table>
+</div>
+</div>
+</div>
+<!-- Interactive Inline Behavioral Script -->
+<script>
+  (function () {
+    // Live BST Clock Realtime Updater (HH:mm:ss AM/PM BST)
+    function updateBSTClock() {
+      const now = new Date();
+      // UTC + 6 hours
+      const utcTime = now.getTime() + (now.getTimezoneOffset() * 60000);
+      const bstTime = new Date(utcTime + (3600000 * 6));
+      
+      let hours = bstTime.getHours();
+      const minutes = String(bstTime.getMinutes()).padStart(2, '0');
+      const seconds = String(bstTime.getSeconds()).padStart(2, '0');
+      const ampm = hours >= 12 ? 'PM' : 'AM';
+      hours = hours % 12;
+      hours = hours ? hours : 12;
+      const hoursStr = String(hours).padStart(2, '0');
+      
+      const clockEl = document.getElementById('live-bst-clock');
+      if (clockEl) {
+        clockEl.textContent = `${hoursStr}:${minutes}:${seconds} ${ampm} BST`;
+      }
+    }
+    setInterval(updateBSTClock, 1000);
+    updateBSTClock();
+
+    // Timeframe Pills Click Micro-Interaction
+    const tfButtons = document.querySelectorAll('.timeframe-btn');
+    tfButtons.forEach(btn => {
+      btn.addEventListener('click', () => {
+        tfButtons.forEach(b => {
+          b.className = 'timeframe-btn px-2 py-0.5 font-label-ticker-xs text-label-ticker-xs text-outline hover:text-on-surface rounded transition-colors';
+        });
+        btn.className = 'timeframe-btn px-2 py-0.5 font-label-ticker-xs text-label-ticker-xs bg-primary-container text-on-primary-container font-bold rounded shadow-sm';
+      });
+    });
+
+    // PRO vs NEWS Mode Toggle
+    const proBtn = document.getElementById('btn-pro-mode');
+    const newsBtn = document.getElementById('btn-news-mode');
+    if (proBtn && newsBtn) {
+      proBtn.addEventListener('click', () => {
+        proBtn.className = 'px-2.5 py-1 rounded font-label-ticker-xs text-label-ticker-xs bg-surface-container-high text-primary font-bold shadow-sm flex items-center gap-1';
+        newsBtn.className = 'px-2.5 py-1 rounded font-label-ticker-xs text-label-ticker-xs text-outline-variant hover:text-on-surface flex items-center gap-1 transition-colors';
+      });
+      newsBtn.addEventListener('click', () => {
+        newsBtn.className = 'px-2.5 py-1 rounded font-label-ticker-xs text-label-ticker-xs bg-surface-container-high text-tertiary font-bold shadow-sm flex items-center gap-1';
+        proBtn.className = 'px-2.5 py-1 rounded font-label-ticker-xs text-label-ticker-xs text-outline-variant hover:text-on-surface flex items-center gap-1 transition-colors';
+      });
+    }
+
+    // Voice Alert Preview Button Sound Simulation
+    const voiceBtn = document.getElementById('voice-preview-btn');
+    if (voiceBtn) {
+      voiceBtn.addEventListener('click', () => {
+        const originalText = voiceBtn.innerHTML;
+        voiceBtn.innerHTML = '<span class="material-symbols-outlined text-[13px] animate-spin">sync</span> বাজাচ্ছে...';
+        
+        // Audio synthesis fallback (if supported in browser)
+        if ('speechSynthesis' in window) {
+          const utterance = new SpeechSynthesisUtterance('EUR/USD আপ বাই সিগন্যাল পাওয়া গেছে।');
+          utterance.lang = 'bn-BD';
+          utterance.rate = 1.0;
+          window.speechSynthesis.speak(utterance);
+        }
+        setTimeout(() => {
+          voiceBtn.innerHTML = originalText;
+        }, 2200);
+      });
+    }
+
+    // Quick Execute Toast Simulation
+    const buyBtn = document.getElementById('quick-buy-btn');
+    if (buyBtn) {
+      buyBtn.addEventListener('click', () => {
+        buyBtn.classList.add('opacity-75');
+        setTimeout(() => {
+          buyBtn.classList.remove('opacity-75');
+          alert('ORDER FILLED: Long 2.00 Lots EUR/USD @ 1.08464 | SL: 1.08375 | TP: 1.08525');
+        }, 150);
+      });
+    }
+
+    // Asset Category Pills Interactivity
+    const catPills = document.querySelectorAll('.cat-pill');
+    catPills.forEach(pill => {
+      pill.addEventListener('click', () => {
+        catPills.forEach(p => {
+          p.className = 'cat-pill whitespace-nowrap px-2 py-0.5 rounded font-label-ticker-xs text-label-ticker-xs bg-surface-container-high text-on-surface-variant hover:text-on-surface';
+        });
+        pill.className = 'cat-pill whitespace-nowrap px-2 py-0.5 rounded font-label-ticker-xs text-label-ticker-xs bg-primary text-on-primary font-bold';
+      });
+    });
+
+    // Realtime Tick Price Fluctuations Simulation
+    const bidEl = document.getElementById('live-bid');
+    const askEl = document.getElementById('live-ask');
+    setInterval(() => {
+      if (bidEl && askEl) {
+        const rand = (Math.random() - 0.48) * 0.00008;
+        const currentBid = parseFloat(bidEl.textContent);
+        const newBid = (currentBid + rand).toFixed(5);
+        const newAsk = (parseFloat(newBid) + 0.00012).toFixed(5);
+        
+        bidEl.textContent = newBid;
+        askEl.textContent = newAsk;
+      }
+    }, 1800);
+
+  })();
+</script></main><footer class="fixed bottom-0 left-64 right-0 h-8 bg-surface-container-lowest/95 backdrop-blur-md z-40 flex items-center justify-between px-space-xl"><div class="flex items-center gap-space-xl overflow-x-auto whitespace-nowrap"><div class="flex items-center gap-space-xs font-label-data-sm text-label-data-sm"><span class="font-bold text-on-surface">EUR/USD</span><span class="text-secondary">1.08942</span><span class="text-secondary font-label-ticker-xs text-label-ticker-xs">+0.18%</span></div><div class="flex items-center gap-space-xs font-label-data-sm text-label-data-sm"><span class="font-bold text-on-surface">GBP/USD</span><span class="text-secondary">1.27415</span><span class="text-secondary font-label-ticker-xs text-label-ticker-xs">+0.32%</span></div><div class="flex items-center gap-space-xs font-label-data-sm text-label-data-sm"><span class="font-bold text-on-surface">USD/JPY</span><span class="text-error">154.218</span><span class="text-error font-label-ticker-xs text-label-ticker-xs">-0.24%</span></div><div class="flex items-center gap-space-xs font-label-data-sm text-label-data-sm"><span class="font-bold text-on-surface">XAU/USD GOLD</span><span class="text-secondary">2386.40</span><span class="text-secondary font-label-ticker-xs text-label-ticker-xs">+0.85%</span></div><div class="flex items-center gap-space-xs font-label-data-sm text-label-data-sm"><span class="font-bold text-on-surface">BTC/USD</span><span class="text-secondary">64810.00</span><span class="text-secondary font-label-ticker-xs text-label-ticker-xs">+2.41%</span></div></div><div class="flex items-center gap-space-md"><span class="font-label-ticker-xs text-label-ticker-xs text-outline">SESSION:</span><span class="font-label-ticker-xs text-label-ticker-xs px-1.5 py-0.5 rounded bg-surface-container-high text-secondary font-semibold">LONDON / NY OVERLAP</span></div></footer></div></body></html>
